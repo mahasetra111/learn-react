@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Card from "./components/card";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="boutique">
+      <Card
+        image="https://img.a.transfermarkt.technology/portrait/header/342229-1682683695.jpg"
+        nom="Kylian Mbappé"
+        twit="@KMbappe"
+        inst="@k.mbappe"
+        bio="Prodige français du football mondial, Kylian Mbappé est connu pour sa vitesse fulgurante et son sens du but exceptionnel. Actuellement au Real Madrid, il est considéré comme le futur meilleur joueur du monde."
+      />
+      <Card
+        image="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg"
+        nom="Cristiano Ronaldo"
+        twit="@Cristiano"
+        inst="@cristiano"
+        bio="Cristiano Ronaldo est l'un des plus grands footballeurs de tous les temps avec plus de 900 buts en carrière. Actuellement à Al Nassr, il continue de repousser les limites du football mondial."
+      />
+      <Card
+        image="https://upload.wikimedia.org/wikipedia/commons/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg"
+        nom="Lionel Messi"
+        twit="@TeamMessi"
+        inst="@leomessi"
+        bio="Lionel Messi, champion du monde 2022 avec l'Argentine, est considéré par beaucoup comme le meilleur joueur de l'histoire du football. Aujourd'hui à l'Inter Miami, il continue d'enchanter le monde avec sa magie balle au pied."
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
