@@ -1,5 +1,8 @@
 import Card from "./components/card";
 import "./App.css";
+import ProductCard from "./components/ProductCard";
+import produits from "./data/products";
+
 
 function App() {
   return (
@@ -25,6 +28,14 @@ function App() {
         inst="@leomessi"
         bio="Lionel Messi, champion du monde 2022 avec l'Argentine, est considéré par beaucoup comme le meilleur joueur de l'histoire du football. Aujourd'hui à l'Inter Miami, il continue d'enchanter le monde avec sa magie balle au pied."
       />
+  <div>
+  <h2 className="produits-titre">NOS PRODUITS</h2>
+  <div className="produits-liste">
+    {produits.map((produit) => (
+      <ProductCard key={produit.id} nom={produit.nom} prix={produit.prix} />
+    ))}
+  </div>
+</div>
     </div>
   );
 }

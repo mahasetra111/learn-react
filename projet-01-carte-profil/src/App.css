@@ -82,3 +82,114 @@ body {
   font-size: 12px;
   font-weight: 600;
 }
+
+/*  DEUXIEME EXO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  min-height: 100vh;
+  padding: 50px 20px;
+}
+
+/* Titre */
+.produits-titre {
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  position: relative;
+}
+
+.produits-titre::before {
+  content: '🛒';
+  display: block;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.produits-titre::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #e63946, #f4a261);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Grille */
+.produits-liste {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Carte */
+.produit-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 35px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.produit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e63946, #f4a261);
+}
+
+.produit-card:hover {
+  transform: translateY(-12px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(230, 57, 70, 0.5);
+}
+
+/* Icone produit */
+.produit-card::after {
+  content: '📦';
+  display: block;
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+/* Nom */
+.produit-card h3 {
+  font-size: 22px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+}
+
+/* Prix */
+.produit-card p {
+  display: inline-block;
+  font-size: 18px;
+  color: #f4a261;
+  font-weight: 700;
+  background: rgba(244, 162, 97, 0.15);
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(244, 162, 97, 0.3);
+}
