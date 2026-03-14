@@ -3,8 +3,27 @@ import "./App.css";
 import ProductCard from "./components/ProductCard";
 import produits from "./data/products";
 import Conteur from "./components/Counter";
+import TodoInput from "./components/TodoInput";
+import { useState } from "react";
+import TodoItem from "./components/TodoItem";
 
 function App() {
+
+  const [Tache,SetTache]=useState([]);
+  const [Input ,SetInput]=useState('');
+  /*fonction pour ajouter le tache */
+  const OnAjoute=()=>{
+    if(Input==='') return;
+    SetTache([...Tache,Input]);
+    SetInput('');
+  }
+
+  /*function pour suprimer */
+  const OnSuprimer=(index)=>{
+    const nouveauList=Tache.filter((_,i)=> i !==index)
+    SetTache(nouveauList);
+  }
+        
   return (
     <div>
 
@@ -52,7 +71,35 @@ function App() {
         <h1 className="section-titre">Projet 3 — Compteur interactif</h1>
         <Conteur />
       </section>
+        {/* ===== PROJET 4 — todolist ===== */}
+      {/* <section className="section">
+         <h1>TODO LIST</h1>
+        <TodoInput
+         Input={Input}
+         SetInput={SetInput}
+          OnAjoute={OnAjoute}
+/>
+        
+        {Tache.map((tache, index) => (
+       <TodoItem
+       key={index}
+       texte={tache}
+        OnSuprimer={() => OnSuprimer(index)}
+  />
+))}
+      
+      </section> */}
 
+
+<section className="section">
+  <h1 className="section-titre">Todo List</h1>
+  <div className="todo-container">
+    <TodoInput Input={Input} SetInput={SetInput} OnAjoute={OnAjoute} />
+    {Tache.map((tache, index) => (
+      <TodoItem key={index} texte={tache} OnSuprimer={() => OnSuprimer(index)} />
+    ))}
+  </div>
+</section>
     </div>
   );
 }

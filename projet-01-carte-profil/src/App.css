@@ -269,3 +269,103 @@ body {
 .btn:active {
   transform: scale(0.95);
 }
+
+
+/* ===== PROJET 4 — TODOLIST===== */
+
+/* ===== PROJET 4 — TODO LIST ===== */
+.todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.todo-input-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.todo-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.todo-input:focus {
+  border-color: #00d4ff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.todo-btn-ajouter {
+  padding: 14px 25px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00d4ff, #0083b0);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.todo-btn-ajouter:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Chaque tâche */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.todo-item p {
+  color: white;
+  font-size: 16px;
+  display: inline !important;
+  background: none !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.todo-btn-supprimer {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(230, 57, 70, 0.2);
+  color: #e63946;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  transition: all 0.2s ease;
+}
+
+.todo-btn-supprimer:hover {
+  background: #e63946;
+  color: white;
+  transform: scale(1.05);
+}
