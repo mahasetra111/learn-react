@@ -11,7 +11,24 @@ body {
   padding: 50px 20px;
 }
 
-/* Conteneur des cartes */
+/* ===== SECTIONS ===== */
+.section {
+  margin-bottom: 80px;
+  padding: 40px 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-titre {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0.5;
+}
+
+/* ===== PROJET 1 — FOOTBALLEURS ===== */
 .boutique {
   display: flex;
   gap: 30px;
@@ -19,7 +36,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Carte */
 .card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -37,7 +53,6 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Avatar */
 .avatar img {
   width: 120px;
   height: 120px;
@@ -55,7 +70,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Bio */
 .bio {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.75);
@@ -64,7 +78,6 @@ body {
   padding: 0 5px;
 }
 
-/* Réseaux sociaux */
 .socials {
   display: flex;
   justify-content: center;
@@ -83,21 +96,7 @@ body {
   font-weight: 600;
 }
 
-/*  DEUXIEME EXO */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-  min-height: 100vh;
-  padding: 50px 20px;
-}
-
-/* Titre */
+/* ===== PROJET 2 — PRODUITS ===== */
 .produits-titre {
   text-align: center;
   font-size: 36px;
@@ -125,7 +124,6 @@ body {
   border-radius: 2px;
 }
 
-/* Grille */
 .produits-liste {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -134,7 +132,6 @@ body {
   margin: 0 auto;
 }
 
-/* Carte */
 .produit-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -165,7 +162,6 @@ body {
   border-color: rgba(230, 57, 70, 0.5);
 }
 
-/* Icone produit */
 .produit-card::after {
   content: '📦';
   display: block;
@@ -173,7 +169,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* Nom */
 .produit-card h3 {
   font-size: 22px;
   color: white;
@@ -182,7 +177,6 @@ body {
   text-transform: capitalize;
 }
 
-/* Prix */
 .produit-card p {
   display: inline-block;
   font-size: 18px;
@@ -192,4 +186,86 @@ body {
   padding: 6px 18px;
   border-radius: 20px;
   border: 1px solid rgba(244, 162, 97, 0.3);
+}
+
+/* ===== PROJET 3 — COMPTEUR ===== */
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.counter-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 50px 60px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.counter-title {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.counter-value {
+  font-size: 100px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  margin-bottom: 40px;
+}
+
+.counter-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-plus {
+  background: linear-gradient(135deg, #e63946, #f4a261);
+  color: white;
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+}
+
+.btn-moins {
+  background: linear-gradient(135deg, #457b9d, #1d3557);
+  color: white;
+  box-shadow: 0 8px 20px rgba(69, 123, 157, 0.4);
+}
+
+.btn-reset {
+  width: auto;
+  padding: 0 25px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
 }
