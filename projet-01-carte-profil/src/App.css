@@ -369,3 +369,100 @@ body {
   color: white;
   transform: scale(1.05);
 }
+
+
+
+/* ===== PROJET 5 — QUIZ ===== */
+.question-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.question-texte {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reponses-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.reponse-btn {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reponse-btn:hover {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: #00d4ff;
+  transform: scale(1.03);
+}
+
+.quiz-progression {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.quiz-resultat {
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.quiz-resultat h2 {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.quiz-resultat p {
+  font-size: 48px;
+  font-weight: 800;
+  color: #00d4ff;
+  margin-bottom: 30px;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.quiz-btn-rejouer {
+  padding: 14px 35px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00d4ff, #0083b0);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quiz-btn-rejouer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}

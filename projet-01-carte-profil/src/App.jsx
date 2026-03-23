@@ -6,11 +6,14 @@ import Conteur from "./components/Counter";
 import TodoInput from "./components/TodoInput";
 import { useState } from "react";
 import TodoItem from "./components/TodoItem";
+import questions from "./data/question ";
+import Question from "./components/Question"; // 
 
 function App() {
 
   const [Tache,SetTache]=useState([]);
   const [Input ,SetInput]=useState('');
+ 
   /*fonction pour ajouter le tache */
   const OnAjoute=()=>{
     if(Input==='') return;
@@ -21,11 +24,54 @@ function App() {
   /*function pour suprimer */
   const OnSuprimer=(index)=>{
     const nouveauList=Tache.filter((_,i)=> i !==index)
-    SetTache(nouveauList);
+    
+    
+    Tache(nouveauList);
   }
-        
+  /*projet  quiz*/
+   const [QuestionActuelle,SetQuestionActuelle]=useState(0) 
+   const [Score,SetScore]=useState(0)  
+   const onReponse=(reponse)=>{
+    if (reponse===questions[QuestionActuelle].bonneReponse){
+      SetScore(Score +1)
+    }
+    SetQuestionActuelle(QuestionActuelle +1)
+   }
+  
+
+
+
+
   return (
+
     <div>
+         /*projet  quiz*/
+         
+         {/* <h1>quiz football </h1>
+         {QuestionActuelle===questions.length ?(
+         <h2> Quiz terminé  </h2>
+         <p>ton score est {Score}  / {question.length }   </p>
+
+        <button  onClick={()=> SetQuestionActuelle(0), SetScore(0)}>
+            Recommencer
+        </button>
+
+
+
+
+         ):(
+          question {QuestionActuelle +1} /{questions.length}
+          <question 
+          question={question[QuestionActuelle].question }
+          reponse={question[QuestionActuelle].reponse}
+          onReponse={onReponse}
+          />
+
+         )
+         } */}
+
+      
+
 
       {/* ===== PROJET 1 — Cartes de footballeurs ===== */}
       <section className="section">
@@ -91,7 +137,7 @@ function App() {
       </section> */}
 
 
-<section className="section">
+  <section className="section">
   <h1 className="section-titre">Todo List</h1>
   <div className="todo-container">
     <TodoInput Input={Input} SetInput={SetInput} OnAjoute={OnAjoute} />
@@ -100,6 +146,36 @@ function App() {
     ))}
   </div>
 </section>
+
+   {/* ===== PROJET 5 — QUIZ ===== */}
+<section className="section">
+  <h1 className="section-titre">Quiz Football ⚽</h1>
+
+  {QuestionActuelle === questions.length ? (
+    <div className="quiz-resultat">
+      <h2>Quiz terminé ! 🎉</h2>
+      <p>Ton score : {Score} / {questions.length}</p>
+      <button
+        className="quiz-btn-rejouer"
+        onClick={() => { SetQuestionActuelle(0); SetScore(0); }}
+      >
+        Rejouer
+      </button>
+    </div>
+  ) : (
+    <div>
+      <p className="quiz-progression">
+        Question {QuestionActuelle + 1} / {questions.length}
+      </p>
+      <Question
+        question={questions[QuestionActuelle].question}
+        reponses={questions[QuestionActuelle].reponses}
+        onReponse={onReponse}
+      />
+    </div>
+  )}
+</section>
+
     </div>
   );
 }
